@@ -1,4 +1,4 @@
-package com.vrv.framework.model;
+package com.vrv.framework.common.model;
 
 import lombok.Data;
 

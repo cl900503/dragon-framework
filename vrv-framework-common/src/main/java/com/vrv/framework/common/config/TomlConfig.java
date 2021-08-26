@@ -1,6 +1,6 @@
-package com.vrv.framework.common;
+package com.vrv.framework.common.config;
 
-import com.vrv.framework.model.MicroConfig;
+import com.vrv.framework.common.model.MicroConfig;
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;

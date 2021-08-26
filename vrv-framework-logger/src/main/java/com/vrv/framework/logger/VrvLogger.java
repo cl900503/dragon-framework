@@ -1,6 +1,6 @@
 package com.vrv.framework.logger;
 
-import com.vrv.framework.common.TomlConfig;
+import com.vrv.framework.common.config.TomlConfig;
 import org.apache.logging.log4j.core.config.Configurator;
 
 import java.util.HashMap;
