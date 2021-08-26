@@ -16,6 +16,7 @@
 		<module>vrv-framework-bom</module>
 		<module>vrv-framework-common</module>
 		<module>vrv-framework-logger</module>
+		<module>vrv-framework-demo</module>
 	</modules>
 	<packaging>pom</packaging>
 
