@@ -22,7 +22,10 @@ public class VrvLoggerTest {
 
         for (int i = 1; i <= 10; i++) {
             logger.debug("测试：" + i);
+            logger.info("测试：" + i);
         }
+
+        // [:2021-08-27 16:51:10,492:] [:DEBUG:] [:main:] [:demoServer-22468:] [:com.vrv.example.logger.VrvLoggerTest::测试：10:]
     }
 
 }
