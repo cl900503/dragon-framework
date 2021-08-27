@@ -2,6 +2,9 @@ package com.vrv.framework.common.model;
 
 import lombok.Data;
 
+/**
+ * @author chenlong
+ */
 @Data
 public class MicroConfig {
 	private String name;

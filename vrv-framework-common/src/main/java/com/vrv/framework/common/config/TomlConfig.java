@@ -235,10 +235,7 @@ public class TomlConfig {
     /**
      * 根据index获取单个服务配置
      *
-     * @param index
      * @return
-     * @author chenlong
-     * @date 2021-06-24 10:22:06
      */
     public MicroConfig getMicroConfig() {
         if (0 < microConfigList.size()) {
