@@ -1,0 +1,4 @@
+[vrv]
+log = "D:\\log\\log4j2-default.yml" # 日志路径
+[vrv.server.micro.demo]
+name = "demoServer"

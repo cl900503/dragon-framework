@@ -13,9 +13,9 @@
 	<artifactId>vrv-framework</artifactId>
 	<version>1.1.0-SNAPSHOT</version>
 	<modules>
-		<module>vrv-framework-bom</module>
 		<module>vrv-framework-common</module>
 		<module>vrv-framework-logger</module>
+		<module>vrv-framework-bom</module>
 		<module>examples</module>
 	</modules>
 	<packaging>pom</packaging>
