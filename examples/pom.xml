@@ -9,11 +9,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>vrv-framework-demo</artifactId>
+    <artifactId>vrv-framework-example</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>demo-server</module>
-<!--        <module>demo-client</module>-->
+        <module>vrv-framework-example-server</module>
+<!--        <module>vrv-framework-example-client</module>-->
     </modules>
 
     <dependencyManagement>
