@@ -1,0 +1,4 @@
+[vrv]
+log = "log4j2-default.yml" # 日志配置路径，也可以丢在项目外一个公共位置
+[vrv.server.micro.demo]
+name = "demoServer" # 服务名，会输出到日志里

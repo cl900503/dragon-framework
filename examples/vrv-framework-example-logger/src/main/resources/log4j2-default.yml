@@ -1,0 +1,48 @@
+Configuration:
+  shutdownHook: disable
+  status: warn
+  monitorInterval: 60
+  properties:
+    property:
+      - name: filename
+        value: ${sys:logPath}/${sys:logName}.log
+      - name: log.pattern
+        value: "[:%d:] [:%-5level:] [:%thread:] [:${sys:SERVER_ID}-%pid:] [:%c:%M:%m:]%n"
+      - name: rollingFilePattern
+        value: ${sys:logPath}/${sys:logName}-%d{yyyy-MM-dd}.%i.log.gz
+  Appenders:
+    Console:
+      name: STDOUT
+      PatternLayout:
+        Pattern: ${log.pattern}
+    RollingFile:
+      name: myRollingFile
+      fileName: ${filename}
+      filePattern: ${rollingFilePattern}
+      PatternLayout:
+        Pattern: ${log.pattern}
+      Policies:
+        TimeBasedTriggeringPolicy:
+          interval: "1"
+        SizeBasedTriggeringPolicy:
+          size: "200MB"
+      DefaultRolloverStrategy:
+        max: 80
+        Delete:
+          basePath: ${sys:logPath}
+          IfLastModified:
+            age: 30d
+
+  Loggers:
+    AsyncLogger:
+      - name: com.vrv
+        level: debug
+        additivity: false
+        appender-ref:
+          - ref: myRollingFile
+
+    Root:
+      level: error
+      additivity: false
+      appender-ref:
+        ref: myRollingFile
