@@ -15,6 +15,7 @@
         <module>vrv-framework-example-logger</module>
         <module>vrv-framework-example-server</module>
         <module>vrv-framework-example-client</module>
+        <module>vrv-framework-example-base</module>
     </modules>
 
     <dependencyManagement>

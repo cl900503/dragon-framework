@@ -26,7 +26,7 @@ public class ZkRegistry implements Registry {
      */
     @Override
     public void register(ServiceInfo serviceInfo) {
-        logger.debug("zk 注册成功：{}", serviceInfo);
+        logger.debug("zookeeper 注册成功：{}", serviceInfo);
     }
 
     /**
@@ -36,6 +36,6 @@ public class ZkRegistry implements Registry {
      */
     @Override
     public void unregister(ServiceInfo serviceInfo) {
-        logger.debug("zk 注销成功：{}", serviceInfo);
+        logger.debug("zookeeper 注销成功：{}", serviceInfo);
     }
 }

@@ -1,7 +1,7 @@
 # 该配置文件只对应一个服务，不存在多个服务共享一个配置文件的情况
 [vrv]
 distribute = true # 是否为分布式部署
-log = "log4j2-default.yml" # 日志路径
+log = "/data/linkdood/im/conf/logconf/log4j2-default.yml" # 日志路径
 [vrv.registry] ## 服务注册与发现
 model = "zookeeper" # 启用注册发现模式 当前支持 zookeeper、local
 # 用于服务注册，只在分布式环境下有用，优先级: inet > inetEnv > 程序获取本地首个非127的IP
@@ -29,15 +29,15 @@ testWhileIdle = false
 
 [vrv.server] ## 如果本机是服务，该配置有效，如果本程序仅仅是一个客户端，那么置空该部分
 
-[vrv.server.micro.user]
-name = "user"
+[vrv.server.micro.userbase]
+name = "userBaseServer"
 version = "1.0"
 weight = 1 # 当前服务的权重，默认1，预留字段
-[vrv.server.micro.user.scheduling] # 默认协议等同于 servers.rpc.protocol
+[vrv.server.micro.userbase.scheduling] # 默认协议等同于 servers.rpc.protocol
 #cores = 2 # optional 默认= cpu 核心数
 #maxReadBuffer = 1048576 # optional 字节数 默认 1MB
 #threadsPerCore = 8 # optional 默认= cpu 核心数 * 8
-[vrv.server.micro.user.net]
+[vrv.server.micro.userbase.net]
 address = ":11242" # 服务监听地址,IP:PORT
 network = "tcp" # 网络协议
 protocol = "thrift.binary" # 内部协议 binary：TBinaryProtocol compact: TCompactProtocol
