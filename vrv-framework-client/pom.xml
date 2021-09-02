@@ -7,7 +7,7 @@
     <parent>
         <groupId>com.vrv</groupId>
         <artifactId>vrv-framework</artifactId>
-        <version>1.1.0-SNAPSHOT</version>
+        <version>0.2.0</version>
     </parent>
     <artifactId>vrv-framework-client</artifactId>
     <description>客户端</description>
