@@ -6,7 +6,7 @@
 	<parent>
         <groupId>com.vrv</groupId>
         <artifactId>vrv-framework</artifactId>
-        <version>0.2.0</version>
+        <version>0.2.1</version>
     </parent>
 	<artifactId>vrv-framework-common</artifactId>
 	<description>公共模块</description>
