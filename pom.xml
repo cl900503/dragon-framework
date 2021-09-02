@@ -7,12 +7,13 @@
 	<parent>
 		<groupId>com.vrv</groupId>
 		<artifactId>vrv-root-dependencies</artifactId>
-		<version>0.4.5</version>
+		<version>0.1.0</version>
 	</parent>
 
 	<artifactId>vrv-framework</artifactId>
 	<version>0.1.0</version>
 	<modules>
+		<module>vrv-root-dependencies</module>
 		<module>vrv-framework-common</module>
 		<module>vrv-framework-logger</module>
 		<module>vrv-framework-registry</module>
