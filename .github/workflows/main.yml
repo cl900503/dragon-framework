@@ -23,8 +23,11 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
-      - name: GitHub Packages
-        run: mvn clean deploy
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Build
+        uses: actions/setup-java@v2
+        with:
+          java-version: '8'
+      - run: mvn clean install
