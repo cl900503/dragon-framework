@@ -23,11 +23,11 @@ public class RegistryFactory {
     /**
      * 各种注册中心
      */
-    private static Map<String, Registry> registrys = new HashMap<String, Registry>();
+    private static final Map<String, Registry> REGISTRYS = new HashMap<String, Registry>();
 
     static {
-        registrys.put("zk", new ZkRegistry());
-        registrys.put("db", new DbRegistry());
+        REGISTRYS.put("zookeeper", new ZkRegistry());
+        REGISTRYS.put("db", new DbRegistry());
     }
 
     /**
@@ -36,8 +36,8 @@ public class RegistryFactory {
      * @param name zk or db
      * @return
      */
-    public Registry get(String name) {
-        Registry registry = registrys.get(name);
+    public static Registry get(String name) {
+        Registry registry = REGISTRYS.get(name);
         if (registry == null) {
             logger.error("Registry:{} is not found!");
         }

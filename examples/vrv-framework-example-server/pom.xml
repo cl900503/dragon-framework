@@ -16,7 +16,18 @@
 
         <dependency>
             <groupId>com.vrv</groupId>
+            <artifactId>vrv-framework-server</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.vrv</groupId>
             <artifactId>vrv-framework-logger</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.vrv</groupId>
+            <artifactId>vrv-framework-example-base</artifactId>
+            <version>0.1.0</version>
         </dependency>
 
     </dependencies>

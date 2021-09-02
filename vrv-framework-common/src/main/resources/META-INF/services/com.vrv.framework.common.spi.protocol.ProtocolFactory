@@ -1,0 +1,2 @@
+com.vrv.framework.common.spi.protocol.impl.BinaryProtocolFactory
+com.vrv.framework.common.spi.protocol.impl.CompactProtocolFactory

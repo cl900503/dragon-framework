@@ -30,26 +30,31 @@
 			</dependency>
 			<dependency>
 				<groupId>${project.groupId}</groupId>
+				<artifactId>vrv-framework-registry</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
 				<artifactId>vrv-framework-server</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>${project.groupId}</groupId>
-				<artifactId>vrv-framework-registry</artifactId>
+				<artifactId>vrv-framework-client</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
-	<distributionManagement>
-		<repository>
-			<id>local-nexus</id>
-			<url>http://192.168.6.166:8081/repository/maven-releases/</url>
-		</repository>
-		<snapshotRepository>
-			<id>local-nexus</id>
-			<url>http://192.168.6.166:8081/repository/maven-snapshots/</url>
-		</snapshotRepository>
-	</distributionManagement>
+<!--	<distributionManagement>-->
+<!--		<repository>-->
+<!--			<id>local-nexus</id>-->
+<!--			<url>http://192.168.6.166:8081/repository/maven-releases/</url>-->
+<!--		</repository>-->
+<!--		<snapshotRepository>-->
+<!--			<id>local-nexus</id>-->
+<!--			<url>http://192.168.6.166:8081/repository/maven-snapshots/</url>-->
+<!--		</snapshotRepository>-->
+<!--	</distributionManagement>-->
 
 </project>

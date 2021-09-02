@@ -12,6 +12,20 @@
 
     <artifactId>vrv-framework-example-client</artifactId>
 
+    <dependencies>
+
+        <dependency>
+            <groupId>org.apache.thrift</groupId>
+            <artifactId>libthrift</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.vrv</groupId>
+            <artifactId>vrv-framework-example-base</artifactId>
+            <version>0.1.0</version>
+        </dependency>
+
+    </dependencies>
+
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>

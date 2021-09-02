@@ -1,6 +1,7 @@
 package com.vrv.framework.registry.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Data;
 
 /**
  * 服务信息
@@ -8,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
  * @author chenlong
  * @date 2021/8/31 11:12
  */
+@Data
 public class ServiceInfo {
 
     /**
