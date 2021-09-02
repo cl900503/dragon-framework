@@ -7,7 +7,7 @@
     <parent>
         <groupId>com.vrv</groupId>
         <artifactId>vrv-framework-example</artifactId>
-        <version>0.1.0</version>
+        <version>0.2.1</version>
     </parent>
 
     <artifactId>vrv-framework-example-client</artifactId>
@@ -21,7 +21,6 @@
         <dependency>
             <groupId>com.vrv</groupId>
             <artifactId>vrv-framework-example-base</artifactId>
-            <version>0.1.0</version>
         </dependency>
 
     </dependencies>

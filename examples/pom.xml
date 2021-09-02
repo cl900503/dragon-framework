@@ -5,21 +5,26 @@
     <parent>
         <groupId>com.vrv</groupId>
         <artifactId>vrv-framework</artifactId>
-        <version>0.1.0</version>
+        <version>0.2.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>vrv-framework-example</artifactId>
     <packaging>pom</packaging>
     <modules>
+        <module>vrv-framework-example-base</module>
         <module>vrv-framework-example-logger</module>
         <module>vrv-framework-example-server</module>
         <module>vrv-framework-example-client</module>
-        <module>vrv-framework-example-base</module>
     </modules>
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.vrv</groupId>
+                <artifactId>vrv-framework-example-base</artifactId>
+                <version>${project.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

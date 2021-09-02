@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>com.vrv</groupId>
 		<artifactId>vrv-framework</artifactId>
-		<version>0.1.0</version>
+		<version>0.2.1</version>
 	</parent>
 	<artifactId>vrv-framework-logger</artifactId>
 	<description>日志模块</description>
