@@ -1,9 +1,10 @@
 package com.vrv.example.server;
 
+
 import com.vrv.example.server.impl.UserImpl;
 import com.vrv.framework.logger.VrvLogger;
-import com.vrv.framework.server.ServerFactory;
-import com.vrv.framework.server.VrvServer;
+import com.vrv.framework.server.vrv.VrvServer;
+import com.vrv.framework.server.VrvServerFactory;
 
 /**
  * @author chenlong
@@ -19,7 +20,7 @@ public class Starter {
 
         VrvLogger.initialize();
 
-        VrvServer vrvServer = ServerFactory.DEFAULT.getServer();
+        VrvServer vrvServer = VrvServerFactory.DEFAULT.getVrvServer();
         vrvServer.setServiceImpl(() -> new UserImpl());
         vrvServer.start();
 

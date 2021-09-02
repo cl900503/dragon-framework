@@ -1,8 +1,10 @@
-package com.vrv.framework.server;
+package com.vrv.framework.server.service.impl;
 
 import com.vrv.framework.common.thrift.BizMethodInfo;
 import com.vrv.framework.common.thrift.BizMethodInvokeInfo;
-import com.vrv.framework.common.thrift.VRVService;
+import com.vrv.framework.common.thrift.VrvService;
+import com.vrv.framework.server.monitor.VrvServiceInfo;
+import com.vrv.framework.server.vrv.VrvServer;
 import org.apache.thrift.TException;
 
 import java.time.LocalDateTime;
@@ -15,9 +17,9 @@ import java.util.Map;
  * @author chenlong
  * @date 2021/9/1 10:49
  */
-public class VRVServiceBase implements VRVService.Iface {
+public class VrvServiceBase implements VrvService.Iface {
     private VrvServer server;
-    private VRVServiceInfo serviceInfo;
+    private VrvServiceInfo serviceInfo;
 
     @Override
     public String getName() throws TException {
@@ -91,11 +93,11 @@ public class VRVServiceBase implements VRVService.Iface {
         return this.server.getServerInfo().getOptions();
     }
 
-    public VRVServiceInfo getServiceInfo() {
+    public VrvServiceInfo getServiceInfo() {
         return serviceInfo;
     }
 
-    public void setServiceInfo(VRVServiceInfo serviceInfo) {
+    public void setServiceInfo(VrvServiceInfo serviceInfo) {
         this.serviceInfo = serviceInfo;
     }
 

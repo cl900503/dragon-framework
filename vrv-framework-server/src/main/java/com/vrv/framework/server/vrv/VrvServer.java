@@ -1,9 +1,10 @@
-package com.vrv.framework.server;
+package com.vrv.framework.server.vrv;
 
 import com.vrv.framework.server.model.VrvServerInfo;
 import org.apache.thrift.protocol.TProtocolFactory;
 
 import java.util.Map;
+import java.util.function.Supplier;
 
 /**
  * 定义服务操作接口
@@ -35,7 +36,7 @@ public interface VrvServer {
      *
      * @param loadService load
      */
-    void setServiceImpl(LoadService loadService);
+    void setServiceImpl(Supplier<Object> loadService);
 
     /**
      * 设置服务采用协议工厂

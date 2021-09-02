@@ -1,8 +1,11 @@
-package com.vrv.framework.server;
+package com.vrv.framework.server.proxy;
 
 import com.vrv.framework.common.intercept.VrvServerInterceptHelp;
 import com.vrv.framework.common.thrift.BizMethodInfo;
-import com.vrv.framework.common.thrift.VRVService;
+import com.vrv.framework.common.thrift.VrvService;
+import com.vrv.framework.server.monitor.VrvServiceInfo;
+import com.vrv.framework.server.vrv.VrvServer;
+import com.vrv.framework.server.service.impl.VrvServiceBase;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,10 +18,10 @@ import java.util.List;
  * @author chenlong
  * @date 2021/9/1 10:38
  */
-public class VRV {
+public class Vrv {
 
-    static Logger logger = LoggerFactory.getLogger(VRV.class);
-    private VRVServiceInfo serviceInfo = new VRVServiceInfo();
+    static Logger logger = LoggerFactory.getLogger(Vrv.class);
+    private VrvServiceInfo serviceInfo = new VrvServiceInfo();
     private VrvServerInterceptHelp vrvServerInterceptHelp = new VrvServerInterceptHelp();
 
 //	static {
@@ -38,14 +41,14 @@ public class VRV {
     public Object wrapper(VrvServer server, Object service, Object proxy) {
 
 
-        VRVServiceBase fsb = (VRVServiceBase) service;
+        VrvServiceBase fsb = (VrvServiceBase) service;
         fsb.setServiceInfo(serviceInfo);
         fsb.setServer(server);
         registerServiceInfo(service);
         return Proxy.newProxyInstance(
                 service.getClass().getClassLoader(),
                 service.getClass().getInterfaces(),
-                new VRVProxyHandler(proxy, vrvServerInterceptHelp.getInterceptHandles()));
+                new VrvProxyHandler(proxy, vrvServerInterceptHelp.getInterceptHandles()));
     }
 
     /**
@@ -86,7 +89,7 @@ public class VRV {
         return list;
     }
 
-    private Class<VRVService.Iface> iface = VRVService.Iface.class;
+    private Class<VrvService.Iface> iface = VrvService.Iface.class;
 
     private boolean isVRVServiceIfaceMethod(Method m) {
 

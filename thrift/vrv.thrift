@@ -24,7 +24,7 @@ struct BizMethodInvokeInfo{
    6: i64 successMaxTime;
 }
 
-service VRVService {
+service VrvService {
   /**
    * return service name
    */

@@ -1,18 +1,21 @@
 package com.vrv.framework.server;
 
+import com.vrv.framework.server.vrv.VrvServer;
+import com.vrv.framework.server.vrv.impl.thrift.VrvTThreadedSelectorServer;
+
 /**
- * ServerFactory
+ * VrvServer
  *
  * @author chenlong
  * @date 2021/8/31 17:56
  */
-public enum ServerFactory {
+public enum VrvServerFactory {
     /**
      * 默认 TThreadedSelectorServer
      */
     DEFAULT() {
         @Override
-        public VrvServer getServer() {
+        public VrvServer getVrvServer() {
 
             return new VrvTThreadedSelectorServer();
         }
@@ -23,6 +26,6 @@ public enum ServerFactory {
      *
      * @return
      */
-    public abstract VrvServer getServer();
+    public abstract VrvServer getVrvServer();
 
 }

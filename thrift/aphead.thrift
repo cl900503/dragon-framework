@@ -1,4 +1,4 @@
-namespace java com.vrv.example.base.thriftbean
+namespace java com.vrv.example.base.thrift
 
 /**
  * 用户

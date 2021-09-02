@@ -1,6 +1,8 @@
-package com.vrv.framework.server;
+package com.vrv.framework.server.utils;
 
+import com.vrv.framework.server.proxy.Vrv;
 import com.vrv.framework.server.exception.VRVTProcessorException;
+import com.vrv.framework.server.vrv.VrvServer;
 import org.apache.thrift.TProcessor;
 import org.springframework.aop.framework.AdvisedSupport;
 import org.springframework.aop.framework.AopProxy;
@@ -36,7 +38,7 @@ public class ClassDefinition {
         TProcessor processor = null;
         try {
             Constructor<? extends TProcessor> constructor = processorClass.getConstructor(serviceIface);
-            processor = constructor.newInstance(new VRV()
+            processor = constructor.newInstance(new Vrv()
                     .wrapper(server, target, service));
         } catch (Exception e) {
             e.printStackTrace();

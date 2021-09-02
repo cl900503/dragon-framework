@@ -1,13 +1,11 @@
 package com.vrv.example.client;
 
-import com.vrv.example.base.thriftbean.User;
-import com.vrv.example.base.thriftbean.UserService;
-import com.vrv.framework.common.utils.CommonUtil;
+import com.vrv.example.base.thrift.User;
+import com.vrv.example.base.thrift.UserService;
 import org.apache.thrift.TException;
 import org.apache.thrift.protocol.TBinaryProtocol;
 import org.apache.thrift.protocol.TProtocol;
 import org.apache.thrift.transport.TSocket;
-import org.apache.thrift.transport.TTransportException;
 import org.apache.thrift.transport.layered.TFramedTransport;
 
 /**

@@ -1,4 +1,4 @@
-package com.vrv.framework.server;
+package com.vrv.framework.server.monitor;
 
 import com.vrv.framework.common.thrift.BizMethodInfo;
 import com.vrv.framework.common.thrift.BizMethodInvokeInfo;
@@ -13,12 +13,21 @@ import java.util.concurrent.ConcurrentHashMap;
  * @author chenlong
  * @date 2021/9/1 10:39
  */
-public class VRVServiceInfo {
+public class VrvServiceInfo {
 
-    private long serviceCount = 0;//服务调用总次数
-    private final List<BizMethodInfo> bizMethodInfoList = new ArrayList<BizMethodInfo>();//业务方法列表
+    /**
+     * 服务调用总次数
+     */
+    private long serviceCount = 0;
+    /**
+     * 业务方法列表
+     */
+    private final List<BizMethodInfo> bizMethodInfoList = new ArrayList<BizMethodInfo>();
+    /**
+     * 业务方法调用信息
+     */
     private final ConcurrentHashMap<String, BizMethodInvokeInfo> bizMethodInvokeInfoMap =
-            new ConcurrentHashMap<String, BizMethodInvokeInfo>();//业务方法调用信息
+            new ConcurrentHashMap<String, BizMethodInvokeInfo>();
 
     public long getServiceCount() {
         return serviceCount;

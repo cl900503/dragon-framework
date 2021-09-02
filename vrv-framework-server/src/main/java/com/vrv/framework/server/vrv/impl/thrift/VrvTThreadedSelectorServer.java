@@ -1,5 +1,6 @@
-package com.vrv.framework.server;
+package com.vrv.framework.server.vrv.impl.thrift;
 
+import com.vrv.framework.server.vrv.impl.VrvServerBase;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.thrift.TProcessor;
 import org.apache.thrift.protocol.TProtocolFactory;

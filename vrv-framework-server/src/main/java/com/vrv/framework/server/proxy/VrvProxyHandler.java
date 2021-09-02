@@ -1,10 +1,12 @@
-package com.vrv.framework.server;
+package com.vrv.framework.server.proxy;
 
 import com.vrv.framework.common.intercept.VrvServerInterceptHandle;
 import com.vrv.framework.common.intercept.VrvServerMethodInvoke;
 import com.vrv.framework.common.intercept.VsfServerInfo;
 import com.vrv.framework.common.spi.Convert2StringProvider;
 import com.vrv.framework.common.spi.string.Convert2String;
+import com.vrv.framework.server.monitor.VrvServiceInfo;
+import com.vrv.framework.server.service.impl.VrvServiceBase;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,15 +18,15 @@ import java.util.List;
  * @author chenlong
  * @date 2021/9/1 10:52
  */
-public class VRVProxyHandler implements InvocationHandler {
+public class VrvProxyHandler implements InvocationHandler {
 
-    static Logger logger = LoggerFactory.getLogger(VRVProxyHandler.class);
+    static Logger logger = LoggerFactory.getLogger(VrvProxyHandler.class);
     private Object service;
     private List<VrvServerInterceptHandle> vrvServerInterceptHandles;
 
     private Convert2String cs = Convert2StringProvider.getConvert2String();
 
-    protected VRVProxyHandler(Object service, List<VrvServerInterceptHandle> vrvInterceptHandles) {
+    protected VrvProxyHandler(Object service, List<VrvServerInterceptHandle> vrvInterceptHandles) {
 
         this.service = service;
         this.vrvServerInterceptHandles = vrvInterceptHandles;
@@ -33,8 +35,8 @@ public class VRVProxyHandler implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 
-        VRVServiceBase fsb = (VRVServiceBase) service;
-        VRVServiceInfo serviceInfo = fsb.getServiceInfo();
+        VrvServiceBase fsb = (VrvServiceBase) service;
+        VrvServiceInfo serviceInfo = fsb.getServiceInfo();
 
         long startTime = System.currentTimeMillis();
         Object result = null;

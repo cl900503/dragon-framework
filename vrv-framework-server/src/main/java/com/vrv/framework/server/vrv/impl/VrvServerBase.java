@@ -1,8 +1,11 @@
-package com.vrv.framework.server;
+package com.vrv.framework.server.vrv.impl;
 
 import com.vrv.framework.common.spi.ProtocolFactoryProvider;
+import com.vrv.framework.server.utils.ClassDefinition;
+import com.vrv.framework.server.utils.VrvServerRegister;
 import com.vrv.framework.server.model.VrvServerInfo;
 import com.vrv.framework.server.utils.ServerUtil;
+import com.vrv.framework.server.vrv.VrvServer;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.thrift.TProcessor;
@@ -12,6 +15,7 @@ import org.apache.thrift.transport.TServerTransport;
 
 import java.net.InetSocketAddress;
 import java.util.Map;
+import java.util.function.Supplier;
 
 /**
  * @author chenlong
@@ -23,7 +27,7 @@ public abstract class VrvServerBase implements VrvServer {
     protected VrvServerInfo info = new VrvServerInfo();
     private VrvServerRegister register = new VrvServerRegister();
     protected volatile TServer server;
-    private LoadService loadService;
+    private Supplier<Object> loadService;
     private TProtocolFactory proFactory;
 
     public VrvServerBase() {
@@ -51,7 +55,7 @@ public abstract class VrvServerBase implements VrvServer {
     }
 
     @Override
-    public void setServiceImpl(LoadService loadService) {
+    public void setServiceImpl(Supplier<Object> loadService) {
 
         this.loadService = loadService;
     }
@@ -72,7 +76,7 @@ public abstract class VrvServerBase implements VrvServer {
         // 加载服务信息
         ServerUtil.loadServerInfo(info);
         log.info("start {}:{} ...", info.getName(), info.getVersion());
-        TProcessor processor = ClassDefinition.createTProcessor(this, loadService.loadServiceImpl());
+        TProcessor processor = ClassDefinition.createTProcessor(this, loadService.get());
         if (this.proFactory == null) {
             this.proFactory = ProtocolFactoryProvider.getProtocolFactory(info.getProtocol()).serverProtocolFactory();
         }

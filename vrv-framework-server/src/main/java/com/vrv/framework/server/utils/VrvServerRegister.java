@@ -1,4 +1,4 @@
-package com.vrv.framework.server;
+package com.vrv.framework.server.utils;
 
 import com.vrv.framework.registry.Registry;
 import com.vrv.framework.registry.factory.RegistryFactory;
