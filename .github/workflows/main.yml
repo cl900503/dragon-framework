@@ -31,4 +31,4 @@ jobs:
         with:
           java-version: '8'
           distribution: 'adopt'
-      - run: mvn clean install
+      - run: mvn clean deploy
