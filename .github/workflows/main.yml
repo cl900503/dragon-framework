@@ -36,3 +36,32 @@ jobs:
       # 打印环境变量
       - name: print env
         run: printenv
+        
+      # update version
+      - name: update version
+        uses: actions/setup-java@v2
+        with:
+          java-version: '8'
+          distribution: 'adopt'
+      - run: |
+          mvn versions:set -DprocessAllModules=true -DnewVersion='0.2.4'
+          mvn versions:commit
+
+      # commit version 文件
+      - name: commit version
+        uses: EndBug/add-and-commit@v4
+        with:
+          author_name: chenlong 
+          author_email: 1021773811@qq.com
+          message: "Commit Version"
+          add: "*.xml"
+          
+      # 发布
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        with:
+          tag_name: v0.2.4
+          release_name: v0.2.4
+          draft: false # 是否是草稿
+          prerelease: false # 是否是预发布
