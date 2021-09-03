@@ -7,7 +7,8 @@ env:
 
 # Controls when the workflow will run
 on:
-  pull_request:
+  release:
+    types: [published]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -24,44 +25,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout code
         uses: actions/checkout@v2
-        
-      # 获取PR信息并将其添加到环境变量
-      - name: set PR_INFO 
-        run: |
-          echo PR_NUMBER=$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }') >> $GITHUB_ENV
-          echo PR_TITLE=$(jq --raw-output .pull_request.title "$GITHUB_EVENT_PATH") >> $GITHUB_ENV
-          echo PR_URL=$(jq --raw-output .pull_request.html_url "$GITHUB_EVENT_PATH") >> $GITHUB_ENV
-          echo PR_USER=$(jq --raw-output .pull_request.user.login "$GITHUB_EVENT_PATH") >> $GITHUB_ENV
-
-      # 打印环境变量
-      - name: print env
-        run: printenv
-        
-      # update version
-      - name: update version
+      
+      - name: Build
         uses: actions/setup-java@v2
         with:
           java-version: '8'
           distribution: 'adopt'
-      - run: |
-          mvn versions:set -DprocessAllModules=true -DnewVersion='0.2.4'
-          mvn versions:commit
-
-      # commit version 文件
-      - name: commit version
-        uses: EndBug/add-and-commit@v4
-        with:
-          author_name: chenlong 
-          author_email: 1021773811@qq.com
-          message: "Commit Version"
-          add: "*.xml"
-          
-      # 发布
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        with:
-          tag_name: v0.2.4
-          release_name: v0.2.4
-          draft: false # 是否是草稿
-          prerelease: false # 是否是预发布
+      - run: mvn clean deploy
