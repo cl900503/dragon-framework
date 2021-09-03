@@ -14,7 +14,7 @@
         <module>vrv-framework-server</module>
         <module>vrv-framework-client</module>
         <module>vrv-framework-bom</module>
-        <!--<module>examples</module>-->
+        <module>examples</module>
     </modules>
     <packaging>pom</packaging>
 
