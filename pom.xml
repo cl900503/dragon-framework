@@ -6,7 +6,7 @@
 
     <groupId>com.vrv</groupId>
     <artifactId>vrv-framework</artifactId>
-    <version>0.2.4</version>
+    <version>0.2.1</version>
     <modules>
         <module>vrv-framework-common</module>
         <module>vrv-framework-logger</module>
