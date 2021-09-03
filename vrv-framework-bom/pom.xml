@@ -46,15 +46,12 @@
 		</dependencies>
 	</dependencyManagement>
 
-<!--	<distributionManagement>-->
-<!--		<repository>-->
-<!--			<id>local-nexus</id>-->
-<!--			<url>http://192.168.6.166:8081/repository/maven-releases/</url>-->
-<!--		</repository>-->
-<!--		<snapshotRepository>-->
-<!--			<id>local-nexus</id>-->
-<!--			<url>http://192.168.6.166:8081/repository/maven-snapshots/</url>-->
-<!--		</snapshotRepository>-->
-<!--	</distributionManagement>-->
+	<distributionManagement>
+		<repository>
+		    <id>github</id>
+		    <name>GitHub OWNER Apache Maven Packages</name>
+		    <url>https://maven.pkg.github.com/cl900503/vrv-framework</url>
+		</repository>
+	</distributionManagement>
 
 </project>
