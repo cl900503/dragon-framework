@@ -1,7 +1,7 @@
 package com.vrv.framework.server.vrv.impl;
 
 import com.vrv.framework.common.spi.ProtocolFactoryProvider;
-import com.vrv.framework.server.utils.ClassDefinition;
+import com.vrv.framework.server.utils.ThriftUtil;
 import com.vrv.framework.server.utils.VrvServerRegister;
 import com.vrv.framework.server.model.VrvServerInfo;
 import com.vrv.framework.server.utils.ServerUtil;
@@ -76,7 +76,7 @@ public abstract class VrvServerBase implements VrvServer {
         // 加载服务信息
         ServerUtil.loadServerInfo(info);
         log.info("start {}:{} ...", info.getName(), info.getVersion());
-        TProcessor processor = ClassDefinition.createTProcessor(this, loadService.get());
+        TProcessor processor = ThriftUtil.createTProcessor(this, loadService.get());
         if (this.proFactory == null) {
             this.proFactory = ProtocolFactoryProvider.getProtocolFactory(info.getProtocol()).serverProtocolFactory();
         }

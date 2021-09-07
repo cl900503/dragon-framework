@@ -5,7 +5,7 @@ log = "log4j2-default.yml" # 日志路径
 [vrv.registry] ## 服务注册与发现
 model = "zookeeper" # 启用注册发现模式 当前支持 zookeeper、local
 # 用于服务注册，只在分布式环境下有用，优先级: inet > inetEnv > 程序获取本地首个非127的IP
-#inet = "127.0.0.1" # optional 本机IP
+inet = "127.0.0.1" # optional 本机IP
 inetEnv = "LOCAL_IP" # optional 获取本机IP的环境变量
 [vrv.registry.zookeeper] # zookeeper 模式
 # 优先级: address > addressEnv
