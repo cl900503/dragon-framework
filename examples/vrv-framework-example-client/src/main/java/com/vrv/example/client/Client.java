@@ -16,7 +16,7 @@ public class Client {
 
     public static void main(String[] args) throws TException {
 
-        TFramedTransport transport = new TFramedTransport(new TSocket("172.24.192.1", 11242));
+        TFramedTransport transport = new TFramedTransport(new TSocket("127.0.0.1", 11242));
         transport.open();
         // 设置传输协议为 TBinaryProtocol
         TProtocol protocol = new TBinaryProtocol(transport);
