@@ -2,9 +2,9 @@ package com.vrv.framework.server.vrv.impl;
 
 import com.vrv.framework.common.spi.ProtocolFactoryProvider;
 import com.vrv.framework.server.utils.ThriftUtil;
-import com.vrv.framework.server.utils.VrvServerRegister;
 import com.vrv.framework.server.model.VrvServerInfo;
 import com.vrv.framework.server.utils.ServerUtil;
+import com.vrv.framework.server.utils.VrvServerRegister;
 import com.vrv.framework.server.vrv.VrvServer;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
