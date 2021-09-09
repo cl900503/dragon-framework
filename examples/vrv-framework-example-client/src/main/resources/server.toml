@@ -1,0 +1,30 @@
+# 该配置文件只对应一个服务，不存在多个服务共享一个配置文件的情况
+[vrv]
+distribute = true # 是否为分布式部署
+log = "log4j2-default.yml" # 日志路径
+[vrv.registry] ## 服务注册与发现
+model = "zookeeper" # 启用注册发现模式 当前支持 zookeeper、local
+# 用于服务注册，只在分布式环境下有用，优先级: inet > inetEnv > 程序获取本地首个非127的IP
+inet = "127.0.0.1" # optional 本机IP
+inetEnv = "LOCAL_IP" # optional 获取本机IP的环境变量
+[vrv.registry.zookeeper] # zookeeper 模式
+# 优先级: address > addressEnv
+#address = "127.0.0.1:11100" # zookeeper 连接信息
+addressEnv = "ZOOKEEPER_URL" # 获取Zookeeper连接信息的环境变量
+namespace = "/vrv/im/service" # 服务注册namespace
+[vrv.registry.local] # 本地模式
+[vrv.rpc] ## RPC相关
+[vrv.rpc.pool] # optional 客户端连接池配置信息,默认值如下
+maxTotal = 200
+maxIdle = 50
+minIdle = 10
+connTimeout = 1000 # 单位毫秒，连接超时时间
+readTimeout = 1000 # 单位毫秒，读超时时间
+writeTimeout = 1000 # 单位毫秒，写超时时间
+[vrv.rpc.pool.java]
+testOnBorrow = false
+testOnCreate = false
+testOnReturn = false
+testWhileIdle = false
+
+[vrv.QinQ] # 业务服务的自己配置，通常由业务开发者配置，由配置库返回
