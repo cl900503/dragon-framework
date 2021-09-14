@@ -1,4 +1,4 @@
-package com.vrv.framework.client;
+package com.vrv.framework.client.router.impl;
 
 import com.vrv.framework.client.model.Node;
 
@@ -7,7 +7,6 @@ import com.vrv.framework.client.model.Node;
  * @date 2021/9/9 16:10
  */
 public class NodeErrorInfo {
-
 
     private String serviceId;
 
