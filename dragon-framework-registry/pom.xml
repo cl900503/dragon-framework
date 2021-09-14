@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.vrv</groupId>
-        <artifactId>vrv-framework</artifactId>
+        <groupId>com.dragon</groupId>
+        <artifactId>dragon-framework</artifactId>
         <version>0.3.1</version>
     </parent>
-    <artifactId>vrv-framework-registry</artifactId>
+    <artifactId>dragon-framework-registry</artifactId>
     <description>注册中心</description>
 
     <dependencies>
@@ -45,8 +45,8 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.vrv</groupId>
-            <artifactId>vrv-framework-common</artifactId>
+            <groupId>com.dragon</groupId>
+            <artifactId>dragon-framework-common</artifactId>
         </dependency>
     </dependencies>
 

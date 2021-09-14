@@ -5,28 +5,18 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.vrv</groupId>
-        <artifactId>vrv-framework-example</artifactId>
+        <groupId>com.dragon</groupId>
+        <artifactId>dragon-framework-example</artifactId>
         <version>0.3.1</version>
     </parent>
 
-    <artifactId>vrv-framework-example-server</artifactId>
+    <artifactId>dragon-framework-example-logger</artifactId>
 
     <dependencies>
 
         <dependency>
-            <groupId>com.vrv</groupId>
-            <artifactId>vrv-framework-server</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.vrv</groupId>
-            <artifactId>vrv-framework-logger</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.vrv</groupId>
-            <artifactId>vrv-framework-example-base</artifactId>
+            <groupId>com.dragon</groupId>
+            <artifactId>dragon-framework-logger</artifactId>
         </dependency>
 
     </dependencies>
@@ -35,5 +25,5 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
-    
+
 </project>
