@@ -17,7 +17,7 @@
                 </repository>
                 <repository>
                     <id>github</id>
-                    <url>https://maven.pkg.github.com/cl900503/vrv-framework</url>
+                    <url>https://maven.pkg.github.com/cl900503/dragon-framework</url>
                     <snapshots>
                         <enabled>true</enabled>
                     </snapshots>
