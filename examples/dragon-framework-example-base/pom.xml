@@ -5,18 +5,23 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.vrv</groupId>
-        <artifactId>vrv-framework-example</artifactId>
+        <groupId>com.dragon</groupId>
+        <artifactId>dragon-framework-example</artifactId>
         <version>0.3.1</version>
     </parent>
 
-    <artifactId>vrv-framework-example-logger</artifactId>
+    <artifactId>dragon-framework-example-base</artifactId>
 
     <dependencies>
 
         <dependency>
-            <groupId>com.vrv</groupId>
-            <artifactId>vrv-framework-logger</artifactId>
+            <groupId>org.apache.thrift</groupId>
+            <artifactId>libthrift</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.dragon</groupId>
+            <artifactId>dragon-framework-common</artifactId>
         </dependency>
 
     </dependencies>

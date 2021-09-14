@@ -4,8 +4,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.vrv</groupId>
-	<artifactId>vrv-framework-bom</artifactId>
+	<groupId>com.dragon</groupId>
+	<artifactId>dragon-framework-bom</artifactId>
 	<version>0.3.1</version>
 	<packaging>pom</packaging>
 
@@ -20,27 +20,27 @@
 		<dependencies>
 			<dependency>
 				<groupId>${project.groupId}</groupId>
-				<artifactId>vrv-framework-common</artifactId>
+				<artifactId>dragon-framework-common</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>${project.groupId}</groupId>
-				<artifactId>vrv-framework-logger</artifactId>
+				<artifactId>dragon-framework-logger</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>${project.groupId}</groupId>
-				<artifactId>vrv-framework-registry</artifactId>
+				<artifactId>dragon-framework-registry</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>${project.groupId}</groupId>
-				<artifactId>vrv-framework-server</artifactId>
+				<artifactId>dragon-framework-server</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>${project.groupId}</groupId>
-				<artifactId>vrv-framework-client</artifactId>
+				<artifactId>dragon-framework-client</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 		</dependencies>
@@ -50,7 +50,7 @@
 		<repository>
 		    <id>github</id>
 		    <name>GitHub OWNER Apache Maven Packages</name>
-		    <url>https://maven.pkg.github.com/cl900503/vrv-framework</url>
+		    <url>https://maven.pkg.github.com/cl900503/dragon-framework</url>
 		</repository>
 	</distributionManagement>
 
