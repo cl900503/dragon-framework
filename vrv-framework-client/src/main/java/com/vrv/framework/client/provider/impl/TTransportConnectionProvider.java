@@ -3,7 +3,7 @@
  */
 package com.vrv.framework.client.provider.impl;
 
-import com.vrv.framework.client.VoaTransport;
+import com.vrv.framework.client.model.VoaTransport;
 import com.vrv.framework.client.model.Node;
 import com.vrv.framework.client.provider.ConnectionProvider;
 import com.vrv.framework.client.transport.ThriftPoolableObjectFactory;

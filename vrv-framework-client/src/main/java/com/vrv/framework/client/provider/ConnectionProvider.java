@@ -3,7 +3,7 @@
  */
 package com.vrv.framework.client.provider;
 
-import com.vrv.framework.client.VoaTransport;
+import com.vrv.framework.client.model.VoaTransport;
 import com.vrv.framework.client.model.Node;
 import org.apache.thrift.transport.TTransport;
 
@@ -15,11 +15,14 @@ import org.apache.thrift.transport.TTransport;
  * @author chenlong
  */
 public interface ConnectionProvider {
+
     /**
      * 获取一个链接
      *
-     * @param node 连接描述信息 {@link Node}
+     * @param node
+     * @param conTimeOut
      * @return
+     * @throws Exception
      */
     public TTransport getConnection(Node node, long conTimeOut) throws Exception;
 

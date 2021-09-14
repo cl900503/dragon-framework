@@ -1,7 +1,7 @@
 package com.vrv.framework.client.registry;
 
 
-import com.vrv.framework.client.CommonServiceRouter;
+import com.vrv.framework.client.router.impl.CommonServiceRouter;
 import com.vrv.framework.client.provider.ConnectionProvider;
 import com.vrv.framework.client.model.Node;
 import com.vrv.framework.client.model.Service;

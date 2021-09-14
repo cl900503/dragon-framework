@@ -1,16 +1,13 @@
-/**
- * @(#)AbstractServiceFactory.java, 2012-11-16.
- *
- * Copyright 2012 RenRen, Inc. All rights reserved.
- */
-package com.vrv.framework.client;
+package com.vrv.framework.client.service.impl;
 
+import com.vrv.framework.client.router.ServiceRouter;
 import com.vrv.framework.client.definition.ClassDefinition;
 import com.vrv.framework.client.filter.NodeFilter;
 import com.vrv.framework.client.filter.impl.AbstractNodeFilter;
 import com.vrv.framework.client.invocation.CemsServiceInvocationHandler;
 import com.vrv.framework.client.registry.VoaRegistry;
 import com.vrv.framework.client.registry.VoaRegistryFactory;
+import com.vrv.framework.client.service.IServiceFactory;
 import com.vrv.framework.client.utils.ClassUtils;
 import com.vrv.framework.common.exception.VoaClassNotFoundException;
 import com.vrv.framework.common.exception.VoaNoSuchMethodException;
@@ -22,12 +19,9 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 /**
- *
  * 抽取公共方法，如缓存服务实例，寻址路由。
  *
- * @author dewei.tan
- * @version $Id: AbstractServiceFactory.java, v 0.1 2013-3-1 下午4:18:19 dewei.tan
- *          Exp $
+ * @author chenlong
  */
 public abstract class AbstractServiceFactory implements IServiceFactory {
 
@@ -82,7 +76,7 @@ public abstract class AbstractServiceFactory implements IServiceFactory {
             if (serviceInstance == null) {
                 InvocationHandler handler = createInvocationHandler(serviceDefinition, timeout, null);
                 @SuppressWarnings("unchecked")
-                T proxy = (T) Proxy.newProxyInstance(ClassUtils.getDefaultClassLoader(), new Class<?>[] { serviceClass }, handler);
+                T proxy = (T) Proxy.newProxyInstance(ClassUtils.getDefaultClassLoader(), new Class<?>[]{serviceClass}, handler);
                 serviceCache.put(serviceClass, proxy);
             }
 
@@ -126,7 +120,7 @@ public abstract class AbstractServiceFactory implements IServiceFactory {
             InvocationHandler handler = createInvocationHandler(serviceDefinition, timeout, filter);
 
             @SuppressWarnings("unchecked")
-            T proxy = (T) Proxy.newProxyInstance(ClassUtils.getDefaultClassLoader(), new Class<?>[] { serviceClass }, handler);
+            T proxy = (T) Proxy.newProxyInstance(ClassUtils.getDefaultClassLoader(), new Class<?>[]{serviceClass}, handler);
             serviceCache.put(serviceClass, proxy);
             return proxy;
         } catch (ClassNotFoundException e) {
@@ -166,7 +160,7 @@ public abstract class AbstractServiceFactory implements IServiceFactory {
         try {
             ClassDefinition serviceDefinition = new ClassDefinition(serviceClass);
             InvocationHandler handler = createCemsInvocationHandler(serviceDefinition, timeout, filter);
-            T proxy = (T) Proxy.newProxyInstance(ClassUtils.getDefaultClassLoader(), new Class<?>[] { serviceClass }, handler);
+            T proxy = (T) Proxy.newProxyInstance(ClassUtils.getDefaultClassLoader(), new Class<?>[]{serviceClass}, handler);
             return proxy;
         } catch (Exception e) {
             throw new RuntimeException("获取所有[" + serviceClass.getName() + "]报错");
@@ -185,7 +179,9 @@ public abstract class AbstractServiceFactory implements IServiceFactory {
     protected InvocationHandler createCemsInvocationHandler(ClassDefinition serviceDefinition, long timeout, NodeFilter filter) {
 
         return new CemsServiceInvocationHandler(getServiceRouter(), serviceDefinition, timeout, filter);
-    };
+    }
+
+    ;
 
     /**
      * 根据特定的版本获取服务
@@ -238,7 +234,7 @@ public abstract class AbstractServiceFactory implements IServiceFactory {
             InvocationHandler handler = createInvocationHandler(serviceDefinition, timeout, filter);
 
             @SuppressWarnings("unchecked")
-            T proxy = (T) Proxy.newProxyInstance(ClassUtils.getDefaultClassLoader(), new Class<?>[] { serviceClass }, handler);
+            T proxy = (T) Proxy.newProxyInstance(ClassUtils.getDefaultClassLoader(), new Class<?>[]{serviceClass}, handler);
             serviceVersionCache.put(key, proxy);
             return proxy;
         } catch (ClassNotFoundException e) {
@@ -264,7 +260,7 @@ public abstract class AbstractServiceFactory implements IServiceFactory {
             InvocationHandler handler = createInvocationHandler(serviceDefinition, ip, port, protocol, timeout);
 
             @SuppressWarnings("unchecked")
-            T proxy = (T) Proxy.newProxyInstance(ClassUtils.getDefaultClassLoader(), new Class<?>[] { serviceClass }, handler);
+            T proxy = (T) Proxy.newProxyInstance(ClassUtils.getDefaultClassLoader(), new Class<?>[]{serviceClass}, handler);
             serviceCacheByIpAndPort.put(key, proxy);
             return proxy;
         } catch (ClassNotFoundException e) {

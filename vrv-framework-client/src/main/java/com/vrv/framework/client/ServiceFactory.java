@@ -1,6 +1,8 @@
 package com.vrv.framework.client;
 
 import com.vrv.framework.client.filter.NodeFilter;
+import com.vrv.framework.client.service.IServiceFactory;
+import com.vrv.framework.client.service.impl.DefaultServiceFactory;
 
 /**
  * 一个静态工厂类（工具类），根据接口生成代理服务类。 使用IServiceFactory的默认实现创建代理服务类。

@@ -1,4 +1,4 @@
-package com.vrv.framework.client;
+package com.vrv.framework.client.service;
 
 import com.vrv.framework.client.filter.NodeFilter;
 

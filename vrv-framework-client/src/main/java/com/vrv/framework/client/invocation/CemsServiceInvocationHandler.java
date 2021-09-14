@@ -1,7 +1,7 @@
 package com.vrv.framework.client.invocation;
 
-import com.vrv.framework.client.ServiceRouter;
-import com.vrv.framework.client.VoaTransport;
+import com.vrv.framework.client.router.ServiceRouter;
+import com.vrv.framework.client.model.VoaTransport;
 import com.vrv.framework.client.definition.ClassDefinition;
 import com.vrv.framework.client.definition.MethodDefinition;
 import com.vrv.framework.client.filter.NodeFilter;
