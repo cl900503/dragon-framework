@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>com.dragon</groupId>
 		<artifactId>dragon-framework</artifactId>
-		<version>0.3.1</version>
+		<version>0.4.0</version>
 	</parent>
 	<artifactId>dragon-framework-logger</artifactId>
 	<description>日志模块</description>
