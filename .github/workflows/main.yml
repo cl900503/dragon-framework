@@ -29,6 +29,6 @@ jobs:
       - name: Build
         uses: actions/setup-java@v2
         with:
-          java-version: '8'
+          java-version: '17'
           distribution: 'adopt'
       - run: mvn clean deploy
