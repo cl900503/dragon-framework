@@ -5,6 +5,9 @@ import com.vrv.framework.registry.model.ServiceConfigBean;
 import java.util.List;
 
 
+/**
+ * @author chenlong
+ */
 public interface Register {
 
     /**

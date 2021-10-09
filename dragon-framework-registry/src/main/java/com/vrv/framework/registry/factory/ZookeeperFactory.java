@@ -5,6 +5,7 @@ import org.apache.curator.framework.CuratorFramework;
 
 /**
  * 获取zookeeper客户端链接
+ * @author chenlong
  */
 public class ZookeeperFactory {
 

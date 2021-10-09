@@ -1,10 +1,5 @@
 package com.vrv.framework.registry.service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import com.vrv.framework.common.utils.json.JacksonUtil;
 import com.vrv.framework.registry.factory.ZookeeperFactory;
 import com.vrv.framework.registry.model.ServiceConfigBean;
@@ -17,7 +12,15 @@ import org.apache.zookeeper.CreateMode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
+/**
+ *
+ * @author chenlong
+ */
 public class ConfigServiceForZK implements Register {
 
 	private static final Logger logger = LoggerFactory.getLogger(ConfigServiceForZK.class);
