@@ -17,6 +17,12 @@ public class VrvLoggerTest {
 
     public static void main(String[] args) {
 
+//        Map<String, String> params = new HashMap<>();
+//        // 日志输出路径
+//        params.put("logPath","/data/log");
+//        // 初始化日志框架
+//        VrvLogger.initialize(params);
+
         // 初始化日志框架
         VrvLogger.initialize();
 
